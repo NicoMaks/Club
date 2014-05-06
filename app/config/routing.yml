@@ -1,0 +1,4 @@
+aiki_subscribe:
+    resource: "@AikiSubscribeBundle/Resources/config/routing.yml"
+    prefix:   /
+

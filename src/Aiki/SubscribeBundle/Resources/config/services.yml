@@ -1,0 +1,7 @@
+parameters:
+#    aiki_subscribe.example.class: Aiki\SubscribeBundle\Example
+
+services:
+#    aiki_subscribe.example:
+#        class: %aiki_subscribe.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
