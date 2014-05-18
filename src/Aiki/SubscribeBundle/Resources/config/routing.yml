@@ -1,3 +1,8 @@
 aiki_subscribe_homepage:
     pattern:  /zapisy
-    defaults: { _controller: AikiSubscribeBundle:Suscribe:index }
+    defaults: { _controller: AikiSubscribeBundle:Subscribe:index }
+
+
+aiki_subscribe_add:
+    pattern:  /zapisy/enfant
+    defaults: { _controller: AikiSubscribeBundle:Subscribe:add }

@@ -6,48 +6,154 @@ Enfants - {{ parent() }}
 {% endblock %}
 {% block sdzblog_body %}
 
-<h1>Mise en place du slider</h1>
-<p>Coucou Version statique du slider avant integration dans twig</p>
-<!--
-<div id="conteneur-inscript">
-    <div id="inscript-etapes">
-        <form id="formElem" name="formElem" action="" method="post">
-            <fieldset class="etap">
-                <legend>Premiere étape</legend>
-                <p>
-                    <label for="Username">Nom</label>
-                    <input id="Username" name="Username" />
-                </p>
-                <p>
-                    <label for="Firstname">Prenom</label>
-                    <input id="Firstname" name="Firstname" />
-                </p>
-                <p>
-                    <label for="Birthday">Date de naissance</label>
-                    <input id="Birthday" name="Birthday">
-                </p>
-            </fieldset>
-            <fieldset class="etap">
-                <legend>Deuxieme etape</legend>
-                <p>
-                    <label for="telephone">Telephone</label>
-                    <input id="telephone" name="telephone" />
-                </p>
-                <p>
-                    <label for="mail">e-mail</label>
-                    <input id="mail" name="mail" />
-                </p>
-            </fieldset>
-        </form>        
-    </div><!-- End Inscription-etape 
-    <div id="inscript-nav" style="display: none;">
-        <ul>
-            <li><a href="#">Etape 1</a></li>
-            <li><a href="#">Etape 2</a></li>
-            <li><a href="#">Etape 3</a></li>
-        </ul>        
-    </div>
-</div>-->
+<h1>Mise en place du formulaire</h1>
+
+
+
+<form action="{{ path('aiki_subscribe_add') }}" method="post" {{form_enctype(form) }}>
+
+    {{ form_errors(form) }}
+                        <fieldset class="etap">
+                            <legend>{{ 'Enfant'|trans }}</legend>    
+<p>
+{{ form_label(form.persona.name, 'Nom'|trans) }}
+{{ form_errors(form.persona.name) }}
+{{ form_widget(form.persona.name) }}
+</p>
+<p>
+{{ form_label(form.persona.firstname, 'Prenom'|trans) }}
+{{ form_errors(form.persona.firstname) }}
+{{ form_widget(form.persona.firstname) }}
+</p>
+<p>
+{{ form_label(form.persona.gender, 'Genre'|trans) }}
+{{ form_errors(form.persona.gender) }}
+{{ form_widget(form.persona.gender) }}
+</p>
+<p>
+{{ form_label(form.persona.dateofbirth, 'Date de naissance'|trans) }}
+{{ form_errors(form.persona.dateofbirth) }}
+{{ form_widget(form.persona.dateofbirth) }}
+</p>
+<p>
+{{ form_label(form.school.number, 'Ecole numero'|trans) }}
+{{ form_errors(form.school.number) }}
+{{ form_widget(form.school.number) }}
+</p>
+<p>
+{{ form_label(form.school.city, 'Ville'|trans) }}
+{{ form_errors(form.school.city) }}
+{{ form_widget(form.school.city) }}
+</p>
+                        </fieldset>
+<fieldset class="etap">
+    <legend>{{ 'Parent'|trans }}</legend>
+    
+<p>
+{{ form_label(form.tutor.persona.name, 'Nom'|trans) }}
+{{ form_errors(form.tutor.persona.name) }}
+{{ form_widget(form.tutor.persona.name) }}
+</p>
+<p>
+{{ form_label(form.tutor.persona.firstname, 'Prenom'|trans) }}
+{{ form_errors(form.tutor.persona.firstname) }}
+{{ form_widget(form.tutor.persona.firstname) }}
+</p>
+<p>
+{{ form_label(form.tutor.affiliation, 'Affiliation'|trans) }}
+{{ form_errors(form.tutor.affiliation) }}
+{{ form_widget(form.tutor.affiliation) }}
+</p>
+<p>
+{{ form_label(form.ice.name, 'Nom'|trans) }}
+{{ form_errors(form.ice.name) }}
+{{ form_widget(form.ice.name) }}
+</p>
+<p>
+{{ form_label(form.ice.firstname, 'Prenom'|trans) }}
+{{ form_errors(form.ice.firstname) }}
+{{ form_widget(form.ice.firstname) }}
+</p>
+<p>
+{{ form_label(form.ice.filiation, 'Affiliation'|trans) }}
+{{ form_errors(form.ice.filiation) }}
+{{ form_widget(form.ice.filiation) }}
+</p>
+<p>
+{{ form_label(form.ice.tel.number, 'Numero'|trans) }}
+{{ form_errors(form.ice.tel.number) }}
+{{ form_widget(form.ice.tel.number) }}
+</p>
+                        </fieldset>
+<fieldset class="etap">
+    <legend>{{ 'Adresse'|trans }}</legend>
+<p>
+{{ form_label(form.adress.street, 'Rue'|trans) }}
+{{ form_errors(form.adress.street) }}
+{{ form_widget(form.adress.street) }}
+</p>
+<p>
+    {{ form_label(form.adress.number, 'Numero'|trans) }}
+{{ form_errors(form.adress.number) }}
+{{ form_widget(form.adress.number) }}
+</p>
+<p>
+{{ form_label(form.adress.suffixnumber, 'Suffixe'|trans) }}
+{{ form_errors(form.adress.suffixnumber) }}
+{{ form_widget(form.adress.suffixnumber) }}
+</p>
+<p>
+{{ form_label(form.adress.appt, 'Appt'|trans) }}
+{{ form_errors(form.adress.appt) }}
+{{ form_widget(form.adress.appt) }}
+</p>
+<p>
+    {{ form_label(form.adress.postcode, 'Code postal'|trans) }}
+{{ form_errors(form.adress.postcode) }}
+{{ form_widget(form.adress.postcode) }}
+</p>
+<p>
+    {{ form_label(form.adress.city, 'Ville'|trans) }}
+{{ form_errors(form.adress.city) }}
+{{ form_widget(form.adress.city) }}
+</p>
+<p>
+{{ form_label(form.tutor.mail.adress, 'Mail'|trans) }}
+{{ form_errors(form.tutor.mail.adress) }}
+{{ form_widget(form.tutor.mail.adress) }}
+</p>
+<p>
+{{ form_label(form.tutor.tel.number, 'Tel'|trans) }}
+{{ form_errors(form.tutor.tel.number) }}
+{{ form_widget(form.tutor.tel.number) }}
+</p>
+                        </fieldset>
+<fieldset class="etap">
+    <legend>{{ 'Droits'|trans }}</legend>
+    
+    <p>
+{{ form_label(form.approval.newsletter, 'Newsletter'|trans) }}
+{{ form_errors(form.approval.newsletter) }}
+{{ form_widget(form.approval.newsletter) }}
+</p>
+
+    <p>
+{{ form_label(form.approval.image, 'Image'|trans) }}
+{{ form_errors(form.approval.image) }}
+{{ form_widget(form.approval.image) }}
+</p>
+
+</fieldset>
+
+{# Génération des champs pas encore écrits.
+Dans cet exemple, ce serait « date », « auteur » et « publication »
+,
+mais aussi le champ CSRF (géré automatiquement par Symfony !)
+et tous les champs cachés (type « hidden »). #}
+{{ form_rest(form) }}
+
+<input type="submit"  />
+</form>
 
 
 <div id="conteneur-inscript">
@@ -170,7 +276,6 @@ Enfants - {{ parent() }}
                     </ul>
                 </div>
             </div>
-        </div>
 {% endblock %}
 
 {% block javascripts %}

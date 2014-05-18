@@ -5,12 +5,12 @@ namespace Aiki\SubscribeBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Persona
+ * Ice
  *
  * @ORM\Table()
- * @ORM\Entity(repositoryClass="Aiki\SubscribeBundle\Entity\PersonaRepository")
+ * @ORM\Entity(repositoryClass="Aiki\SubscribeBundle\Entity\IceRepository")
  */
-class Persona
+class Ice
 {
     /**
      * @var integer
@@ -24,30 +24,29 @@ class Persona
     /**
      * @var string
      *
-     * @ORM\Column(name="name", type="string", length=55)
+     * @ORM\Column(name="name", type="string", length=50)
      */
     private $name;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="firstname", type="string", length=55)
+     * @ORM\Column(name="firstname", type="string", length=50)
      */
     private $firstname;
 
     /**
-     * @var integer
+     * @var string
      *
-     * @ORM\Column(name="gender", type="integer", nullable=true)
+     * @ORM\Column(name="filiation", type="string", length=50, nullable=true)
      */
-    private $gender;
-
+    private $filiation;
+    
     /**
-     * @var \DateTime
-     *
-     * @ORM\Column(name="dateofbirth", type="date", nullable=true)
+     * @ORM\OneToOne(targetEntity="Aiki\SubscribeBundle\Entity\Tel", cascade={"persist"})
      */
-    private $dateofbirth;
+    private $tel;
+
 
     /**
      * Get id
@@ -63,7 +62,7 @@ class Persona
      * Set name
      *
      * @param string $name
-     * @return Suscribe
+     * @return Ice
      */
     public function setName($name)
     {
@@ -86,7 +85,7 @@ class Persona
      * Set firstname
      *
      * @param string $firstname
-     * @return Suscribe
+     * @return Ice
      */
     public function setFirstname($firstname)
     {
@@ -106,49 +105,48 @@ class Persona
     }
 
     /**
-     * Set gender
+     * Set filiation
      *
-     * @param integer $gender
-     * @return Suscribe
+     * @param string $filiation
+     * @return Ice
      */
-    public function setGender($gender)
+    public function setFiliation($filiation)
     {
-        $this->gender = $gender;
+        $this->filiation = $filiation;
 
         return $this;
     }
 
     /**
-     * Get gender
+     * Get filiation
      *
-     * @return integer 
+     * @return string 
      */
-    public function getGender()
+    public function getFiliation()
     {
-        return $this->gender;
+        return $this->filiation;
     }
 
     /**
-     * Set dateofbirth
+     * Set tel
      *
-     * @param \DateTime $dateofbirth
-     * @return Suscribe
+     * @param \Aiki\SubscribeBundle\Entity\Tel $tel
+     * @return Ice
      */
-    public function setDateofbirth($dateofbirth)
+    public function setTel(\Aiki\SubscribeBundle\Entity\Tel $tel = null)
     {
-        $this->dateofbirth = $dateofbirth;
+        $this->tel = $tel;
 
         return $this;
     }
 
     /**
-     * Get dateofbirth
+     * Get tel
      *
-     * @return \DateTime 
+     * @return \Aiki\SubscribeBundle\Entity\Tel 
      */
-    public function getDateofbirth()
+    public function getTel()
     {
-        return $this->dateofbirth;
+        return $this->tel;
     }
-
 }

@@ -38,14 +38,14 @@ class Adress
     /**
      * @var string
      *
-     * @ORM\Column(name="suffixnumber", type="string", length=8)
+     * @ORM\Column(name="suffixnumber", type="string", length=8, nullable=true)
      */
     private $suffixnumber;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="appt", type="string", length=30)
+     * @ORM\Column(name="appt", type="string", length=30, nullable=true)
      */
     private $appt;
 
@@ -66,7 +66,7 @@ class Adress
     /**
      * @var string
      *
-     * @ORM\Column(name="region", type="string", length=255)
+     * @ORM\Column(name="region", type="string", length=255, nullable=true)
      */
     private $region;
 

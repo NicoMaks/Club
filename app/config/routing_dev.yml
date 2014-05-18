@@ -12,3 +12,9 @@ _configurator:
 
 _main:
     resource: routing.yml
+    
+    
+# app/config/routing_dev.yml
+aiki_subscribe_traduction:
+    pattern: /{_locale}/traduction/{name}
+    defaults: { _controller: AikiSubscribeBundle:Subscribe:traduction }
