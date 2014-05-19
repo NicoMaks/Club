@@ -21,13 +21,6 @@ class Adherent
      */
     private $id;
 
-    /**
-     * @var integer
-     *
-     * @ORM\Column(name="number", type="integer")
-     * @ORM\GeneratedValue(strategy="AUTO")
-     */
-    private $number;
 
     /**
      * @var \DateTime
@@ -107,28 +100,7 @@ class Adherent
         return $this->id;
     }
 
-    /**
-     * Set number deleted
-     *
-     * @param integer $number
-     * @return Adherent
-     */
-    public function setNumber($number)
-    {
-        $this->number = $number;
 
-        return $this;
-    }
-
-    /**
-     * Get number
-     *
-     * @return integer 
-     */
-    public function getNumber()
-    {
-        return $this->number;
-    }
 
     /**
      * Set date

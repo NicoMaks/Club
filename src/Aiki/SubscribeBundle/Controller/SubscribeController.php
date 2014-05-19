@@ -19,6 +19,7 @@ class SubscribeController extends Controller
     public function addAction()
     {
         $adherent = new Adherent;
+        $adherent->setIschild(TRUE);
         $form = $this->createForm(new AdherentAddChildType, $adherent);
         
         $request = $this->get('request');

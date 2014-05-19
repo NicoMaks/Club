@@ -5,15 +5,15 @@ Grade: Grade
 Account: Compte
 Date: Date
 Enfant: Enfant
-Nom: Nom
-Prenom: Prenom
-Genre: Genre
-Date de naissance: Date de naissance
+Name: Nom
+First Name: Prenom
+Gender: Genre
+Date of birth: Date de naissance
 Adresse: Adresse
-Rue: Rue
-Numero: Numero
-Code postal: Code postal
-Ville: Ville
+Street: Rue
+Number: Numero
+Post code: Code postal
+City: Ville
 Mail: Mail
 Tel: Tel
 Affiliation: Affiliation
@@ -23,4 +23,5 @@ Droits: Prawo
 Newsletter: Newsletter
 Image: Image
 Responsable (parent): Responsable (parent)
-Ecole numero: Ecole numero
+School number: Ecole numero
+Child: Enfant
